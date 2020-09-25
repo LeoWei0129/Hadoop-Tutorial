@@ -1,0 +1,18 @@
+1. 流程
+啟動一個定時任務:
+	- 定時探測日誌源目錄
+	- 獲取需要採集的文件
+	- 移動這些文件到一個待上傳的臨時目錄
+	- 遍歷待上傳目錄中的文件，逐一傳輸到HDFS的目標路徑，同時將傳輸完成的文件移動到備份目錄
+	
+啟動一個定時任務:
+	- 探測備份目錄中的備份數據，檢查是否已超出最長備份時長，如果超出，則刪除
+	
+2. 規劃各種路徑
+日誌源路徑: D:/Apache Ecosystem/logs/accesslog/
+待上傳臨時目錄: D:/Apache Ecosystem/logs/templog/
+備份目錄: D:/Apache Ecosystem/logs/backup/[date]/
+
+HDFS存儲路徑: /logs/[date]/
+HDFS中的文件的前綴: access_log_
+HDFS中的文件的後綴: .log

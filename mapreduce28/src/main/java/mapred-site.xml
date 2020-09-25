@@ -1,0 +1,6 @@
+<configuration>
+	<property>
+		<name>top.n</name>
+		<value>6</value>
+	</property>
+</configuration>
